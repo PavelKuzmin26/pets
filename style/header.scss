@@ -1,0 +1,118 @@
+@keyframes fadeIn {
+  0% {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+}
+.header {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 9%;
+  box-shadow: $box-shadow;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transform: translateY(-10rem);
+
+  &.active {
+    transform: translateY(0rem);
+  }
+
+  .logo {
+    font-size: 2.5rem;
+    color: #000;
+    font-weight: bolder;
+
+    i {
+      color: $carrot-color;
+    }
+  }
+  .navbar a {
+    margin: 0 1rem;
+    font-size: 1.7rem;
+    color: $light-color;
+
+    &:hover {
+      color: $carrot-color;
+    }
+  }
+  .icons,
+  .icons div {
+    font-size: 2.5rem;
+    margin-left: 1.5rem;
+    color: #000;
+    cursor: pointer;
+    &:hover {
+      color: $carrot-color;
+    }
+  }
+}
+.login-form {
+  position: absolute;
+  top: 120%;
+  right: 2rem;
+  width: 35rem;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: $box-shadow;
+  padding: 2rem;
+  display: none;
+  &.active {
+    display: block;
+    animation: fadeIn 0.4s linear;
+  }
+  h3 {
+    color: #000;
+    font-size: 2.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .box {
+    width: 100%;
+    border-bottom: 1px solid #000;
+    border-width: 0.1rem;
+    padding: 1.5rem 0;
+    font-size: 1.6rem;
+    text-transform: none;
+    color: #000;
+    margin: 1rem 0;
+  }
+  .remember {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+    label {
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: $light-color;
+    }
+  }
+  .btn {
+    @include form-btn();
+    margin: 1.5rem 0;
+  }
+  .links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    a {
+      font-size: 1.4rem;
+      color: $carrot-color;
+      &:hover {
+        color: #000;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.fa-bars {
+  display: none;
+}
+// .icons #menu-btn {
+//   display: none;
+// }
